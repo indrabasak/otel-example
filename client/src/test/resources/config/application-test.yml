@@ -1,0 +1,6 @@
+client:
+  book:
+    host: localhost
+    port: 5080
+    connection-timeout: 1000
+    read-timeout: 1000
