@@ -1,19 +1,19 @@
 language: java
 jdk:
-  - openjdk11
+- openjdk11
 before_script:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script:
-  - mvn clean install sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=indrabasak-github
-    -Dsonar.login=$SONAR_TOKEN
+- mvn clean install sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=indrabasak-github
+  -Dsonar.login=$SONAR_TOKEN
 cache:
   directories: "– $HOME/.m2 – $HOME/.sonar/cache"
 notifications:
   email:
-    - indra.basak1@gmail.com
+  - indra.basak1@gmail.com
   on_success: change
   on_failure: always
   use_notice: true
 env:
   global:
-    - secure: cJX86NcFvor+J+tbn7CAbpjcJCef85BOQdZAzq/AhtzGWm4ijqwyptFPVfGC0ojSSCPBpNawtcyVc8HzO2lKGR2HYihxfrrBQcUY1HXN96KwW2Up0Uhz3Yv5Bp2/TsgHJtZmZ7iKrZ9E3o8P5twbZMRUbi3WyfZK4lDhEPpBwNT91d56hsa07EMgB91coCdqB5uc54ss+vjXjoOXffxjqUEeLCtmRax9Vb9rf4xFSomIrbCsJlDVZ1KSGF8JyvHxB9LzeUdGJXU4dTD298LhhTrpip/af7juQrdY1frCg7X/Vma5fhCxvk7BH09uUxPl03Y7XrqAMMMXqsJr9skvC2WGBc1ZWOgJIX2ML6+DFULOle9ga7+xoHhJold8sGHQbR5+gR5aRVI2EktfNMG9euqIQ0lR3OapoZmnPLHfUUTAmVGsjxgbLwwygBqQhcft4lUD6znHoUqSKmIk5hInTfM2ovnVRx35Pc+dRUBvvYvRkVp5WvAm58+BPrRK5w9HDNnzKHXw/xhq6o4WisoW+NasP/SnGetetjN6BhB8VeFbvjyNdUz/wHzCkNJmM/2Q0hGC0lS+VQ89J0MlFxnWnZdxOpZxJSS6xyVS3RNKvS8UgDXkat5IvHjbgimGR4YvlqnT5qhpRdZA7xKOVYO5miczhYhxTfgyvxCefPvKmgk=
+    secure: MzK8sPTOlSlKogliVB3yqGmlWCA6wzxmfARxsDl2LC1U6LnOsr7/iLOuCmRa04Ga2hOkHhOCpRCj7ADSAInaxiTFd2N/j3vUVkbqaIkAqSmVcQ5P+W7ytnm5dMFMZkz1cpCE95LBzgGZciJEuUO4tpG2qXBl8gvN4zExvNeKV1gpjfBnoK3r7/LPfGQ/S4FHfpDxkPcXNWrUE/IiehXUzz3CDZAhRKlYycKbuAKKcrVxGSfyTr1MtfFfXHXxYkLTWhBLh63gDrBmPNyg94saholMnPYKPOE74WBq8bdQcpT7l2YI0SFs7ab7a/gBTglnmEPPn3bpetJ5d48mrA5AJfQhl+diPhgnOKYHpO7G4HkMj/wy2uJNkfOr39pwQzC/lWYu2y2oGzW6WMK7Rp2Rim1wh2OsXWfmoOMBUf6y47qbg/R7t4/ZCIRuEqonCPNLNyMz11v9LgRGFuQbttz16q0tcc6j41oEMu4unmgKoneZRtszTRsfmBo1smhK/LROWnLcAQ5JtdSZXNShQELV4ifI1XI1DVBNcgTSFsrpAza0LqAiame8FzR+iXsdfxJiukPoUEZB36Rdb4VcloVMb6rHTdAi36WV/o13UorNxCdDbQAui2cMK7zZfGLz/IXQMoNUO7wYmUB55kMfyRv7tbmQdxsD9SiqsJMOpIP2jNA=
