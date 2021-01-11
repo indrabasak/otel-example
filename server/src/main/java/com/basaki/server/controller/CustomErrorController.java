@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.boot.web.servlet.error.ErrorAttributes;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,7 +45,7 @@ public class CustomErrorController implements ErrorController {
     }
 
     @RequestMapping(value = PATH)
-    ErrorInfo error(HttpServletRequest request, HttpServletResponse response) {
+    public ErrorInfo error(HttpServletRequest request, HttpServletResponse response) {
         ErrorInfo info = new ErrorInfo();
         info.setCode(response.getStatus());
         Map<String, Object> attributes =
@@ -62,9 +63,13 @@ public class CustomErrorController implements ErrorController {
 
     private Map<String, Object> getErrorAttributes(HttpServletRequest request,
             boolean includeStackTrace) {
-        WebRequest webRequest =
-                new ServletWebRequest(request);
+        WebRequest webRequest = new ServletWebRequest(request);
+
+        ErrorAttributeOptions options =
+                includeStackTrace ? ErrorAttributeOptions.of(ErrorAttributeOptions.Include.STACK_TRACE)
+                        : ErrorAttributeOptions.defaults();
+
         return errorAttributes.getErrorAttributes(webRequest,
-                includeStackTrace);
+                options);
     }
 }
