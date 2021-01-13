@@ -18,6 +18,17 @@ mvn clean install
 
 ### Run
 Run the executable jar from the command to start the application,
+```
+docker run -it basaki/otel-server:1.0.0 bin/sh
+```
+
+```
+docker run --rm -p 8080:8080  --name=otel-server basaki/otel-server:1.0.0
+
+ docker run --rm -p 8080:8080  --name=otel-server basaki/otel-server:1.0.0
+ 
+ docker run --rm -p 8081:8081  --name=otel-client basaki/otel-client:1.0.0
+```
 
 ### Usage
 TODO

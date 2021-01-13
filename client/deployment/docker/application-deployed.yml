@@ -1,0 +1,11 @@
+server:
+  port: 8081
+
+client:
+  book:
+    host: 192.168.4.23
+    port: 8080
+    connection-timeout: 1000
+    read-timeout: 1000
+    username: userA
+    password: passwordA

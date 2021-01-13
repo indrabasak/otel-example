@@ -15,12 +15,15 @@
     </modules>
 
     <properties>
+        <dockerfile.maven.version>1.4.13</dockerfile.maven.version>
         <jackson.version>2.12.0</jackson.version>
         <java.version>11</java.version>
         <junit.version>4.13</junit.version>
         <lombok.version>1.18.16</lombok.version>
         <mockito.version>2.13.0</mockito.version>
         <netty.version>4.1.12.Final</netty.version>
+        <otel.version>0.13.1</otel.version>
+        <otel.download.url>https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent-all.jar</otel.download.url>
         <powermock.version>2.0.0-beta.5</powermock.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -58,6 +61,18 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${swagger.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.opentelemetry.javaagent</groupId>
+            <artifactId>opentelemetry-javaagent</artifactId>
+            <version>${otel.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.opentelemetry.javaagent</groupId>
+            <artifactId>opentelemetry-javaagent-exporter-jaeger</artifactId>
+            <version>${otel.version}</version>
         </dependency>
 
         <!-- Testing -->
